@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h2><b>Contact Form</b></h2>
+<hr>
+<p>Fill in this form to contact the site owners.</p>
+<form method="POST" novalidate>
+        {{ form.hidden_tag() }}
+        <div class="form-group mb-3">
+            <h6>Name <span style="color: red;">(Required)</span></h6>
+            {{ form.username.label(class="form-label") }} {{ form.username(class="form-control") }}
+        </div>
+        <div class="form-group mb-3">
+            <h6>E-mail <span style="color: red;">(Required)</span></h6>
+            {{ form.email.label(class="form-label") }} {{ form.email(class="form-control") }}
+        </div>
+        <div class="form-group mb-3">
+            <h6>Subject <span style="color: red;">(Required)</span></h6>
+            {{ form.subject.label(class="form-label") }} {{ form.subject(class="form-control") }}
+        </div>
+        <div class="form-group mb-3">
+            <h6>Message <span style="color: red;">(Required)</span></h6>
+            {{ form.message.label(class="form-label") }} {{ form.message(class="form-control", rows="3") }}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
